@@ -43,3 +43,8 @@ export const styles = StyleSheet.create({
   }
   
 });
+
+export const colors = {
+  primary: '#5856D6',
+  
+}
