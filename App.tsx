@@ -4,11 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 // import { MenuLateral } from './src/navigator/MenuLateral';
 // import { Tabs } from './src/navigator/Tabs';
 import { MenuLateral } from './src/navigator/MenuLateral';
+import { Tabs } from './src/navigator/Tabs';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <MenuLateral />
+      <Tabs />
     </NavigationContainer>
   )
 }
