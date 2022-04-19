@@ -1,10 +1,20 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React, { useContext } from 'react'
+import { Button, Text, View } from 'react-native'
+import { AuthContext } from '../context/AuthContext'
+import { styles } from '../theme/appTheme'
 
 export const ContactsScreen = () => {
+
+  const { signIn, authState } = useContext(AuthContext)
+
   return (
-    <View>
-      <Text>Contacts Screen</Text>
+    <View style={styles.globalMargin}>
+      <Text style={styles.title}>Contacts Screen</Text>
+      {
+        (authState.isLoggedIn)
+          ? <Text>Esta logeado</Text>
+          : <Button title="SignIn" onPress={signIn} />
+      }
     </View>
   )
 }

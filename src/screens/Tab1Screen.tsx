@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { styles } from '../theme/appTheme';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { TouchableIcon } from '../components/TouchableIcon';
 
 export const Tab1Screen = () => {
 
@@ -12,7 +12,15 @@ export const Tab1Screen = () => {
   return (
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Iconos</Text>
-      <Text><Icon name="airplane-outline" size={50} color="#900" /></Text>
+      <Text> 
+        <TouchableIcon name="airplane-outline" />
+        <TouchableIcon name="attach-outline" />
+        <TouchableIcon name="bonfire-outline" />
+        <TouchableIcon name="calculator-outline" />
+        <TouchableIcon name="chatbubble-ellipses-outline" />
+        <TouchableIcon name="images-outline" />
+        <TouchableIcon name="leaf-outline" />
+      </Text>
     </View>
   )
   
