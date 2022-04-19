@@ -1,11 +1,10 @@
 import React from 'react';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
 import { SettingsScreen } from '../screens/SettingsScreen';
-import { StackNavigator } from './StackNavigator';
 import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { styles } from '../theme/appTheme';
-import { createStackNavigator } from '@react-navigation/stack';
 import { Tabs } from './Tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,6 +15,11 @@ export const MenuLateral = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
+        headerLeft: () => {
+          return <Text>Hola</Text>
+        },
+        headerShown: false,
+        drawerActiveBackgroundColor: 'black',
         drawerType: width >= 768 ? 'permanent' : 'front'
       }}
       drawerContent={(props) => <MenuInterno {...props} />}
@@ -41,15 +45,23 @@ const MenuInterno = ({navigation}:DrawerContentComponentProps) => {
       {/* Opciones del Menu */}
       <View style={styles.menuContainer}>
         <TouchableOpacity 
-          style={styles.menuBoton}
+          style={{
+            ...styles.menuBoton,
+            flexDirection: 'row',
+          }}
           onPress={() => navigation.navigate('Tabs')}
         >
+          <Icon name="compass-outline" size={23} color="black" />
           <Text style={styles.menuText}>Navegacion</Text>
         </TouchableOpacity>
         <TouchableOpacity 
-          style={styles.menuBoton}
+          style={{
+            ...styles.menuBoton,
+            flexDirection: 'row',
+          }}
           onPress={() => navigation.navigate('SettingsScreen')}
         >
+          <Icon name="cog-outline" size={23} color="black" />
           <Text style={styles.menuText}>Ajustes</Text>
         </TouchableOpacity>
       </View>

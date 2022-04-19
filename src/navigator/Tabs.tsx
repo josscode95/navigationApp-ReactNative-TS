@@ -9,6 +9,7 @@ import { colors } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { TopTabNavigator } from './TopTab';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
   return Platform.OS === 'ios'
@@ -30,16 +31,16 @@ const TabsAndroid = () => {
           let iconName:string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = 'bandage-outline';
               break;
             case 'Tab2Screen':
-              iconName = 'T2';
+              iconName = 'basketball-outline';
               break;
             case 'Tab3Screen':
-              iconName = 'T3';
+              iconName = 'bookmarks-outline';
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>
+          return <Icon name={iconName} size={20} color={color} />
         }
       })}
     >
@@ -74,16 +75,16 @@ const TabsIOS = () => {
           const route = useRoute();
           switch(route.name){
             case 'Tab1Screen':
-              iconName = 'T1'
+              iconName = 'bandage-outline';
               break;
             case 'Tab2Screen':
-              iconName = 'T2'
+              iconName = 'basketball-outline';
               break;
             case 'Tab3Screen':
-              iconName = 'T3'
+              iconName = 'bookmarks-outline';
               break; 
           }
-          return <Text style={{color}}>{iconName}</Text>
+          return <Icon name={iconName} size={20} color={color} />
         }
       }}
     >

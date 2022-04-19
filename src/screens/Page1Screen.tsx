@@ -2,11 +2,18 @@ import { StackScreenProps } from '@react-navigation/stack';
 import React, { useEffect } from 'react'
 import { Button, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { styles } from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { colors, styles } from '../theme/appTheme';
 
 interface Props extends StackScreenProps<any, any>{}
 
 export const Page1Screen = ({navigation}:Props) => {
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerShown: false
+    })
+  })
 
   return (
     <View style={styles.globalMargin}>
@@ -29,6 +36,7 @@ export const Page1Screen = ({navigation}:Props) => {
             nombre: 'Pedro'
           })}
         >
+          <Icon name="body-outline" color="white" size={35} />
           <Text style={styles.botonGrandeTexto}>Pedro</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -41,6 +49,7 @@ export const Page1Screen = ({navigation}:Props) => {
             nombre: 'Maria'
           })}
         >
+          <Icon name="woman-outline" color="white" size={35} />
           <Text style={styles.botonGrandeTexto}>Maria</Text>
         </TouchableOpacity>
       </View>
